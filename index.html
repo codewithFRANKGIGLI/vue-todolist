@@ -14,8 +14,27 @@
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
+<!-- general container -->
+<div id="app">
+    <div class="container m-auto">
+        <!-- header -->
+        <nav class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <a class="m-auto" href="#"><img src="assets/img/logo.png" alt="Logo" class="rounded mx-auto d-block"></a>
+            <h1 class="text-center">VueJS - To Do List</h1>  
+        </nav>
 
-    
+        <!-- main -->
+        <div class="input-container w-50 m-auto shadow-lg bg-body-tertiary rounded">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Add new task here">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add New Task</button>
+            </div>
+        </div>        
+
+    </div>
+
+ </div>
+
 
     <!-------Script links:------->
     <!-- Bootstrap: -->
