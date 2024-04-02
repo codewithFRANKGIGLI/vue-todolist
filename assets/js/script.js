@@ -2,14 +2,13 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            tasks: [
-                'task1',
-                'task2',
-                'task3',
-            ]
+            tasks: '123'
         };
     },
+    
     methods: {
-
+        deleteItem(indexToDelete) {
+            this.tasks.splice(indexToDelete, 1);
+        }
     }
 }).mount('#app');
