@@ -24,11 +24,13 @@
             </nav>
 
             <!-- main -->
-            <div class="input-container w-50 m-auto shadow-lg bg-body-tertiary rounded">
+            <div class="input-container w-75 m-auto shadow-lg bg-body-tertiary rounded">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Add new task here" v-model="newTask" @keyup.enter="addNewTask">
+                    <div class="error position-absolute top-100 end-0 font-monospace text-danger fw-bold"
+                    v-if="isError">Enter at least 5 characters</div>
                     <button class="btn btn-primary" type="button"
-                            @click="addNewTask">Add New Task</button>
+                    @click="addNewTask">Add New Task</button>
                 </div>
             </div>        
 

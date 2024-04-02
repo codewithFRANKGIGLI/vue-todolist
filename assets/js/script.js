@@ -2,8 +2,10 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            isError: false,
             newTask: '',
-            tasks: []
+            tasks: [
+            ]
         };
     },
     
@@ -16,10 +18,11 @@ createApp({
         addNewTask() {
             const trimmedString = this.newTask.trim();
             if(trimmedString.length >= 5) {
-                this.tasks.push(trimmedString);
+                this.tasks.unshift(trimmedString);
                 this.newTask = '';
+                this.isError = false;
             } else {
-                alert('enter at least 5 characters');
+                this.isError = true;
             }
         }
     }
