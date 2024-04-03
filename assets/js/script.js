@@ -2,8 +2,6 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            isError: false,
-            newTask: '',
             todos: [
                 {
                     text: 'Vue 3 basics 1',
@@ -15,7 +13,9 @@ createApp({
                     text: 'Vue 3 basics 3',
                     done: false
                 },
-            ]
+            ],
+            isError: false,
+            newTask: '',
         };
     },
     
@@ -38,11 +38,11 @@ createApp({
                 this.isError = true;
             }
         },
-        checkTask(taskDone) {
-            if(taskDone.done) {
-                taskDone = false;
+        checkTask(todoDone) {
+            if(todoDone.done) {
+                todoDone = false;
             } else {
-                taskDone = true;
+                todoDone = true;
             }
         }
     }
