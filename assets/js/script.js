@@ -40,9 +40,9 @@ createApp({
         },
         checkTask(todoDone) {
             if(todoDone.done) {
-                todoDone = false;
+                todoDone.done = false;
             } else {
-                todoDone = true;
+                todoDone.done = true;
             }
         }
     }
