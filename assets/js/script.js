@@ -4,7 +4,17 @@ createApp({
         return {
             isError: false,
             newTask: '',
-            tasks: [
+            todos: [
+                {
+                    text: 'Vue 3 basics 1',
+                    done: false
+                },{
+                    text: 'Vue 3 basics 2',
+                    done: true
+                },{
+                    text: 'Vue 3 basics 3',
+                    done: false
+                },
             ]
         };
     },
@@ -12,17 +22,27 @@ createApp({
     methods: {
         // funzione btn delete
         deleteItem(indexToDelete) {
-            this.tasks.splice(indexToDelete, 1);
+            this.todos.splice(indexToDelete, 1);
         },
         // funzione btn add new task
         addNewTask() {
-            const trimmedString = this.newTask.trim();
-            if(trimmedString.length >= 5) {
-                this.tasks.unshift(trimmedString);
-                this.newTask = '';
+            const newTodo = {
+                text: this.newTask,
+                done: false
+            };
+            if(newTodo.text.length >= 5) {
                 this.isError = false;
+                this.todos.unshift(newTodo);
+                this.newTask = '';
             } else {
                 this.isError = true;
+            }
+        },
+        checkTask(taskDone) {
+            if(taskDone.done) {
+                taskDone = false;
+            } else {
+                taskDone = true;
             }
         }
     }
